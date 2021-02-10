@@ -1,0 +1,44 @@
+{%extends "layout.html"%}
+ 
+
+{%block body  %}
+
+
+<div class="jumbotron text-center">
+    <h3>Welcome to My World!</h3>
+    <p>
+        Buraya Dilediğinizi Yazınız.
+     </p>
+</div>
+{%if answer == "Evet"%}
+
+<div class="jumbotron text-center">
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            Sol
+          </div>
+          <div class="col-sm">
+            Orta
+          </div>
+          <div class="col-sm">
+            Sağ
+          </div>
+        </div>
+      </div>
+</div>
+
+{%else%}
+<p>Yanlis</p>
+{%endif%}
+
+<div class="jumbotron">
+    {%for book in books%}
+    <ul>
+    <li>{{book}}</li>
+    </ul>
+    {%endfor%}
+</div>
+
+
+{%endblock  %}

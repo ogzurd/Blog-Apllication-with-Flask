@@ -1,0 +1,34 @@
+{%extends "layout.html"%}
+{%block body%}
+ 
+<h3 style="text-align: center;   color: blueviolet; ">Articles</h3>
+<hr>
+
+{%if articles%}
+<form action="/search" method="post">
+    <div class="input-group">
+        <input type="search" class="rounded" placeholder="Search" aria-label="Search"
+          aria-describedby="search-addon" name = "keyword" />
+        <button type="button" class="btn btn-outline-danger">search</button>
+      </div>
+    </form>
+    <hr>
+<ul class="list-group">
+
+    {% for article in articles %}
+    
+    <li class = "list-group-item">  <a href="/article/{{article.id}}">{{ article.title }}</a>    </li>
+        
+
+    {% endfor %}
+
+</ul>
+
+
+
+{%else%}
+
+<div class = "alert alert-danger">There is no Article in this line!</div>
+
+{%endif%}
+{%endblock body%}
